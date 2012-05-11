@@ -48,19 +48,40 @@ _/_/_/      _/_/    _/            _/          _/  _/      _/    _/  _/    _/  _/
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
-<body>
+<body id="top">
 
     <div class="background">
         <img src="img/atom.svg">
     </div>
 
-    <div class="menu">
+    <div class="menu-container">
         <div class="logo">
             <a href="http://atomizersoft.net">
                 <img src="img/atomizersoftwarecolorful.png"/>
             </a>
         </div>
+        <div class="slogan">
+            <h3>Breaking Complexity</h3>
+        </div>
+        <ul id="navmenu">
+            <li><a href="#our-work" tabindex="1">Our Work</a></li>
+            <li><a href="#about" tabindex="2">About</a></li>
+        </ul>
+        <a href="mailto:info@atomizersoft.net">info@atomizersoft.net</a>
     </div>
+
+    <section id="our-work">
+        <a>Examples of work to go here</a>
+
+    </section>
+    <section id="about">
+        <a>About the kind of work we do will go here</a>
+
+        <aside id="team">
+            <a>possibly use an aside to go over the team?</a>
+        </aside>
+
+    </section>
 
           
 
@@ -94,5 +115,84 @@ _/_/_/      _/_/    _/            _/          _/  _/      _/    _/  _/    _/  _/
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
+    <script>
+        window.$j = window.$ = jQuery;
+        $.browser.old_ie = $.browser.msie && $.browser.version < 8;
+
+        var od = 'semantics';
+        function describe(nd) {
+            if (nd != od) {
+                $j("#" + nd + "-icon").addClass("active");
+                $j("#" + od + "-icon").removeClass("active");
+
+                $j("#" + od + "-desc, #" + od + "-header").hide();
+
+                if (!$j.browser.old_ie){
+                    $j("#" + nd + "-desc, #" + nd + "-header").fadeIn();
+                }
+
+                od = nd;
+            }
+            return false;
+        }
+
+        var rotationDelay = 4000;
+        var rotationList = new Array();
+        var rotationIndex = 0;
+        var rotationIntervalId = null;
+
+        function rotate() {
+            ++rotationIndex;
+            rotationIndex %= rotationList.length;
+            describe(rotationList[rotationIndex]);
+        }
+
+        function stopRotation() {
+            if (rotationIntervalId != null) {
+                clearInterval(rotationIntervalId);
+                rotationIntervalId = null;
+            }
+        }
+
+        $j(document).ready(function() {
+
+            // jQuery SmoothScroll | Version 10-04-30
+            $('a[href*=#top], a[href*=#our-work], a[href*=#about]').click(function() {
+
+                // duration in ms
+                var duration=1000;
+
+                // easing values: swing | linear
+                var easing='swing';
+
+                // get / set parameters
+                var newHash=this.hash;
+                var target=$(this.hash).offset().top;
+                var oldLocation=window.location.href.replace(window.location.hash, '');
+                var newLocation=this;
+
+                // make sure it's the same location
+
+                if(oldLocation+newHash==newLocation)
+                {
+                    // set selector
+                    if($.browser.safari) var animationSelector='body:not(:animated)';
+                    else var animationSelector='html:not(:animated)';
+
+                    // animate to target and set the hash to the window.location after the animation
+                    $(animationSelector).animate({ scrollTop: target }, duration, easing, function() {
+
+                        // add new hash to the browser location
+                        window.location.href=newLocation;
+                    });
+
+                    // cancel default click action
+                    return false;
+                }
+            });
+
+            window.preloadBadges && preloadBadges();
+        });
+    </script>
 </body>
 </html>
