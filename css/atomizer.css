@@ -5,8 +5,12 @@
  *       licensed under CC0 <http://creativecommons.org/publicdomain/zero/1.0/>
  */
 /* colors */
+/* colors links */
 /*font info */
 /*sizing*/
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block; }
 
@@ -34,12 +38,12 @@ html {
   -ms-text-size-adjust: 100%; }
 
 html, button, input, select, textarea {
-  font-family: arial;
-  color: #222; }
+  font-family: Arial;
+  color: #323232; }
 
 body {
   margin: 0;
-  font-size: 1em;
+  font-size: 16px;
   line-height: 1.4; }
 
 /*
@@ -61,18 +65,17 @@ body {
    Links
    ========================================================================== */
 a {
-  color: #00e; }
+  color: #0000ee; }
 
 a:visited {
-  color: #551a8b; }
+  color: #0000ee; }
 
 a:hover {
-  color: #06e; }
+  color: #323232; }
 
 a:focus {
   outline: thin dotted; }
 
-/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active {
   outline: 0; }
 
@@ -95,7 +98,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid;
   margin: 1em 0;
   padding: 0; }
 
@@ -164,10 +167,6 @@ nav ul, nav ol {
 /* =============================================================================
    Embedded content
    ========================================================================== */
-/*
- * 1. Improve image quality when scaled in IE7: h5bp.com/d
- * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
- */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -261,9 +260,7 @@ input[type="search"] {
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none; }
 
-/*
- * Remove inner padding and border in FF3/4: h5bp.com/l
- */
+/* Remove inner padding and border in FF3/4: h5bp.com/l */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -301,10 +298,20 @@ td {
   padding: 0.2em 0; }
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Michael Myers
    ========================================================================== */
-.background:hover {
-  opacity: 0.25; }
+#background {
+  background-image: url("/img/atom.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .25; }
 
 .transparent {
   zoom: 1;
