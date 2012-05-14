@@ -10,6 +10,7 @@ $dark-grey: #323232;
 $grey: #ccc;
 $cyan: #3BB9FF;
 $white: #fff;
+$black: #000;
 
 /* colors links */
 $blue: #00e;
@@ -23,9 +24,11 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
 $line-height: 1.4;
 
 /*sizing*/
+$width: 960px;
 $column: 48px;	// The column-width of your grid in pixels
 $gutter: 24px;	// The gutter-width of your grid in pixels
 $margin: 0;
+$menu-height: 150px;
 
 /* =============================================================================
    HTML5 display definitions
@@ -34,7 +37,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
   display: block;
 }
 audio, canvas, video {
-  display: inline-block; *display: inline; *zoom: 1;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 audio:not([controls]) {
   display: none;
@@ -92,20 +97,16 @@ body {
    ========================================================================== */
 
 a {
-  color:$blue;
-}
-a:visited {
-  color: $blue;
-}
-a:hover {
   color:$dark-grey;
 }
-a:focus { outline:
-  thin dotted;
+a:visited {
+  //color: $blue;
 }
-
-a:hover, a:active {
-  outline: 0;
+a:focus {
+  outline: none;
+}
+a:active {
+  color:$black;
 }
 /* =============================================================================
    Typography
@@ -360,25 +361,86 @@ td {
    Author: Michael Myers
    ========================================================================== */
 
+#wrapper{
+  width:$width;
+  margin:0 auto;
+  //padding:10px 0 0 0;
+}
+
 #background{
+
   background-image: url("/img/atom.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   content: "";
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: .25;
+  //opacity: .25;
   //Source: http://stackoverflow.com/questions/7241341/can-i-set-an-opacity-only-to-the-background-image-of-a-div
 }
-
+#empty {
+  //position:relative;
+  height:560px;
+}
+section {
+  border-top: 1px dotted #333;
+  //position://static//relative;
+  //top:5px;
+  clear: both;
+}
+.sub-section{
+  clear: both;
+}
+.left-column{
+  width:$width/2;
+  float:left;
+}
+.right-column{
+  width:$width/2;
+  float:left;
+}
 .transparent {
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: 0.5;
+  opacity: 0.25;
+}
+#menu-container {
+  background-color: $grey;
+  width: $width;
+  height: $menu-height;
+  //position: absolute;
+  //top: 560px;
+  //display:block;
+  //padding-top: 560px;
+}
+
+.buffer{
+  height:$menu-height;
+}
+
+.padding{
+  padding-top: $menu-height;
+}
+
+#menu-container.fixed {
+  position: fixed;
+  top:0;
+
+}
+nav.main{
+  //background-image: -webkit-linear-gradient(white 30%,#EEE 70%);
+  padding-top:50px;
+}
+
+nav li {
+  float: left;
+  padding: 0 0 15px 15px;
+}
+
+p.description {
+
 }
 
 /* ==|== media queries ======================================================

@@ -12,6 +12,8 @@ _/    _/      _/        _/_/    _/      _/  _/_/_/  _/_/_/_/_/  _/_/_/_/  _/    
     _/_/    _/    _/  _/_/_/        _/      _/    _/    _/  _/_/_/_/  _/_/_/    _/_/_/       
        _/  _/    _/  _/            _/        _/  _/  _/    _/    _/  _/    _/  _/            
 _/_/_/      _/_/    _/            _/          _/  _/      _/    _/  _/    _/  _/_/_/_/ 
+
+BREAKING COMPLEXITY
 -->
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -54,58 +56,86 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 </head>
 <body id="top">
 <div id="background"></div>
-    <div id="wrapper">
-        <div class="menu-container">
+<div id="empty"></div>
+<div id="wrapper">
+    <div id="menu-container">
+        <div class="left-column">
             <div class="logo">
                 <a href="http://atomizersoft.net">
-                    <img src="img/atomizersoftwarecolorful.png"/>
+                    <img src="/img/atomizersoftwarecolorful.png"/>
                 </a>
             </div>
-            <code>Breaking Complexity</code>
-
-            <nav>
+            <h3>Breaking Complexity</h3>
+        </div>
+        <div class="right-column">
+            <nav class="main">
                 <ul>
-                    <li><a href="#our-work" tabindex="1">Our Work</a></li>
+                    <li><a href="#work" tabindex="1">Work</a></li>
                     <li><a href="#offerings" tabindex="2">Offerings</a></li>
                     <li><a href="#about" tabindex="2">About</a></li>
                 </ul>
             </nav>
-            <a href="mailto:info@atomizersoft.net">info@atomizersoft.net</a>
+        </div>
+    </div>
+    <div id="stop"></div>
+
+    <section id="work">
+        <h1>Work</h1>
+
+        <div class="sub-section">
+            <h2>PriceIt</h2>
+            <div class="left-column">
+                <img src="/img/priceit/price-it-interest-treatment.png"/>
+            </div>
+            <div class="right-column">
+            <p class="description">
+               PriceIt is an iPhone application that does neat things.
+            </p>
+            </div>
         </div>
 
-        <section id="our-work">
-            <h2>PriceIt</h2>
-            <h2>Animatron</h2>
-            <h4>Coming Soon</h4>
-            <p>Examples of work to go here</p>
+        <div class="sub-section">
+            <h2>Animatronic</h2>
+        </div>
+        <div class="left-column">
+            <canvas id="canvas"></canvas>    
+        </div>
+        <div class="left-column">
+            <p class="description">
+               Animatron is an educational game to teach computer science to young adults. The game is built on
+                HTML5/CSS3/JavaScript for cross platform support on the same code base.
+            </p>
+        </div>
+    </section>
 
-        </section>
-        <section id="offerings">
-            <p>About the kind of work we do will go here.
-                Nice pictures of the technologies as well </p>
-        </section>
+    <section id="offerings">
+        <h1>Offerings</h1>
 
-        <section id="About">
-            <p>Atomizer Software is headquartered in Washington, D.C.</p>
+        <p>About the kind of work we do will go here.
+            Nice pictures of the technologies as well </p>
+    </section>
 
-        </section>
+    <section id="about">
+        <h1>About</h1>
 
-    </div>
+        <p>Atomizer Software is headquartered in Washington, D.C.</p>
+
+    </section>
 
 
-
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a
+    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+   chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to
+    a
     different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
     to experience this site.</p><![endif]-->
 
-<footer>
-    <!-- standard footer things -->
-
-
-</footer>
-
+    <footer>
+        <!-- badges? html5logo badge?  website license badge? -->
+        <a href="mailto:info@atomizersoft.net">info@atomizersoft.net</a>
+    </footer>
+    <div class="empty"></div>
+</div>
 
 <!-- JavaScript at the bottom for fast page loading -->
 
@@ -116,6 +146,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <!-- scripts concatenated and minified via build script -->
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
+<script type="text/javascript" src="js/game.min.js"></script>
 <!-- end scripts -->
 
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -169,11 +200,10 @@ mathiasbynens.be/notes/async-analytics-snippet -->
             rotationIntervalId = null;
         }
     }
-
     $j(document).ready(function () {
 
         // jQuery SmoothScroll | Version 10-04-30
-        $('a[href*=#top], a[href*=#our-work],a[href*=#offerings], a[href*=#about]').click(function () {
+        $('a[href*=#top], a[href*=#work],a[href*=#offerings], a[href*=#about]').click(function () {
 
             // duration in ms
             var duration = 1000;
@@ -188,7 +218,6 @@ mathiasbynens.be/notes/async-analytics-snippet -->
             var newLocation = this;
 
             // make sure it's the same location
-
             if (oldLocation + newHash == newLocation) {
                 // set selector
                 if ($.browser.safari) var animationSelector = 'body:not(:animated)';
@@ -196,7 +225,6 @@ mathiasbynens.be/notes/async-analytics-snippet -->
 
                 // animate to target and set the hash to the window.location after the animation
                 $(animationSelector).animate({ scrollTop:target }, duration, easing, function () {
-
                     // add new hash to the browser location
                     window.location.href = newLocation;
                 });
@@ -207,6 +235,26 @@ mathiasbynens.be/notes/async-analytics-snippet -->
         });
 
         window.preloadBadges && preloadBadges();
+
+        $(window).scroll(function () {
+            // get the amount the window has scrolled
+            var scroll = $(window).scrollTop();
+            console.log(scroll);
+            // add the 'active' class to the correct li based on the scroll amount
+            //0 is very top
+            if (scroll <= 560) {
+                $("#menu-container").removeClass("fixed");
+                $("#background").removeClass("transparent");
+                //$("#work").removeClass("padding");
+                $("#stop").removeClass("buffer");
+            }
+            else {
+                $("#menu-container").addClass("fixed");
+                $("#background").addClass("transparent");
+               // $("#work").addClass("padding");
+                $("#stop").addClass("buffer");
+            }
+        })
     });
 </script>
 </body>

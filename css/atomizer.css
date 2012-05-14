@@ -65,19 +65,13 @@ body {
    Links
    ========================================================================== */
 a {
-  color: #0000ee; }
-
-a:visited {
-  color: #0000ee; }
-
-a:hover {
   color: #323232; }
 
 a:focus {
-  outline: thin dotted; }
+  outline: none; }
 
-a:hover, a:active {
-  outline: 0; }
+a:active {
+  color: black; }
 
 /* =============================================================================
    Typography
@@ -300,23 +294,64 @@ td {
 /* ==|== primary styles =====================================================
    Author: Michael Myers
    ========================================================================== */
+#wrapper {
+  width: 960px;
+  margin: 0 auto; }
+
 #background {
   background-image: url("/img/atom.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   content: "";
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  opacity: .25; }
+  right: 0; }
+
+#empty {
+  height: 560px; }
+
+section {
+  border-top: 1px dotted #333;
+  clear: both; }
+
+.sub-section {
+  clear: both; }
+
+.left-column {
+  width: 480px;
+  float: left; }
+
+.right-column {
+  width: 480px;
+  float: left; }
 
 .transparent {
-  zoom: 1;
-  filter: alpha(opacity=50);
-  opacity: 0.5; }
+  opacity: 0.25; }
+
+#menu-container {
+  background-color: #cccccc;
+  width: 960px;
+  height: 150px; }
+
+.buffer {
+  height: 150px; }
+
+.padding {
+  padding-top: 150px; }
+
+#menu-container.fixed {
+  position: fixed;
+  top: 0; }
+
+nav.main {
+  padding-top: 50px; }
+
+nav li {
+  float: left;
+  padding: 0 0 15px 15px; }
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
