@@ -47,6 +47,21 @@ BREAKING COMPLEXITY
 
     <link rel="stylesheet" href="css/atomizer.css">
 
+    <!-- Style for deckjs -->
+    <link rel="stylesheet" href="js/libs/deckjs/core/deck.core.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/status/deck.status.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/hash/deck.hash.css">
+    <link rel="stylesheet" href="js/libs/deckjs/extensions/scale/deck.scale.css">
+
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" href="css/style/atomizer-deck/atomizer-deck.css">
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" href="css/transition/horizontal-slide.css">
+
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
     <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -54,9 +69,58 @@ Modernizr enables HTML5 elements & feature detects for optimal performance.
 Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
-<body id="top">
+<body>
+<!--Background must be in own div so opacity can be modified -->
 <div id="background"></div>
-<div id="empty"></div>
+<section id="content">
+<div class="deck-container">
+
+    <section class="slide" id="title-slide">
+        <h1>Animatronic Architecture</h1>
+        <img src="img/AtomizerSoftwareColorful.png"/>
+    </section>
+
+    <section class="slide" id="outer-space">
+        <h2>High Level View</h2>
+        <ul class="no-bullet">
+            <li>
+                <h3>HTML5/CSS3/JavaScript</h3>
+            </li>
+            <li>
+                <h3>Node.js & MongoDB</h3>
+            </li>
+            <li>
+                <h3>Impact Game Engine</h3>
+            </li>
+        </ul>
+    </section>
+
+    <!-- deck.navigation snippet -->
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status">
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="../Presentations/Animatronic-Architecture" method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+    </form>
+
+    <!-- deck.hash snippet -->
+    <a href="../Presentations/introduction" title="Permalink to this slide" class="deck-permalink">#</a>
+
+</div>
+</section>
+<div class="sub-section"></div>
+
 <div id="wrapper">
     <div id="menu-container">
         <div class="left-column">
@@ -77,51 +141,6 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
             </nav>
         </div>
     </div>
-    <div id="stop"></div>
-
-    <section id="work">
-        <h1>Work</h1>
-
-        <div class="sub-section">
-            <h2>PriceIt</h2>
-            <div class="left-column">
-                <img src="img/priceit/price-it-interest-treatment.png"/>
-            </div>
-            <div class="right-column">
-            <p class="description">
-               PriceIt is an iPhone application that does neat things.
-            </p>
-            </div>
-        </div>
-
-        <div class="sub-section">
-            <h2>Animatronic</h2>
-        </div>
-        <div class="left-column">
-            <canvas id="canvas"></canvas>    
-        </div>
-        <div class="left-column">
-            <p class="description">
-               Animatron is an educational game to teach computer science to young adults. The game is built on
-                HTML5/CSS3/JavaScript for cross platform support on the same code base.
-            </p>
-        </div>
-    </section>
-
-    <section id="offerings">
-        <h1>Offerings</h1>
-
-        <p>About the kind of work we do will go here.
-            Nice pictures of the technologies as well </p>
-    </section>
-
-    <section id="about">
-        <h1>About</h1>
-
-        <p>Atomizer Software is headquartered in Washington, D.C.</p>
-
-    </section>
-
 
     <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
    chromium.org/developers/how-tos/chrome-frame-getting-started -->
@@ -147,6 +166,23 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
 <script type="text/javascript" src="js/game.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="js/libs/deckjs/core/deck.core.js"></script>
+<script src="js/libs/deckjs/extensions/hash/deck.hash.js"></script>
+<script src="js/libs/deckjs/extensions/menu/deck.menu.js"></script>
+<script src="js/libs/deckjs/extensions/goto/deck.goto.js"></script>
+<script src="js/libs/deckjs/extensions/status/deck.status.js"></script>
+<script src="js/libs/deckjs/extensions/navigation/deck.navigation.js"></script>
+<script src="js/libs/deckjs/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+    $(function () {
+        $.deck('.slide');
+    });
+</script>
+
 <!-- end scripts -->
 
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -161,101 +197,6 @@ mathiasbynens.be/notes/async-analytics-snippet -->
         g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g, s)
     }(document, 'script'));
-</script>
-<script>
-    window.$j = window.$ = jQuery;
-    $.browser.old_ie = $.browser.msie && $.browser.version < 8;
-
-    var od = 'semantics';
-    function describe(nd) {
-        if (nd != od) {
-            $j("#" + nd + "-icon").addClass("active");
-            $j("#" + od + "-icon").removeClass("active");
-
-            $j("#" + od + "-desc, #" + od + "-header").hide();
-
-            if (!$j.browser.old_ie) {
-                $j("#" + nd + "-desc, #" + nd + "-header").fadeIn();
-            }
-
-            od = nd;
-        }
-        return false;
-    }
-
-    var rotationDelay = 4000;
-    var rotationList = new Array();
-    var rotationIndex = 0;
-    var rotationIntervalId = null;
-
-    function rotate() {
-        ++rotationIndex;
-        rotationIndex %= rotationList.length;
-        describe(rotationList[rotationIndex]);
-    }
-
-    function stopRotation() {
-        if (rotationIntervalId != null) {
-            clearInterval(rotationIntervalId);
-            rotationIntervalId = null;
-        }
-    }
-    $j(document).ready(function () {
-
-        // jQuery SmoothScroll | Version 10-04-30
-        $('a[href*=#top], a[href*=#work],a[href*=#offerings], a[href*=#about]').click(function () {
-
-            // duration in ms
-            var duration = 1000;
-
-            // easing values: swing | linear
-            var easing = 'swing';
-
-            // get / set parameters
-            var newHash = this.hash;
-            var target = $(this.hash).offset().top;
-            var oldLocation = window.location.href.replace(window.location.hash, '');
-            var newLocation = this;
-
-            // make sure it's the same location
-            if (oldLocation + newHash == newLocation) {
-                // set selector
-                if ($.browser.safari) var animationSelector = 'body:not(:animated)';
-                else var animationSelector = 'html:not(:animated)';
-
-                // animate to target and set the hash to the window.location after the animation
-                $(animationSelector).animate({ scrollTop:target }, duration, easing, function () {
-                    // add new hash to the browser location
-                    window.location.href = newLocation;
-                });
-
-                // cancel default click action
-                return false;
-            }
-        });
-
-        window.preloadBadges && preloadBadges();
-
-        $(window).scroll(function () {
-            // get the amount the window has scrolled
-            var scroll = $(window).scrollTop();
-            //console.log(scroll);
-            // add the 'active' class to the correct li based on the scroll amount
-            //0 is very top
-            if (scroll <= 560) {
-                $("#menu-container").removeClass("fixed");
-                $("#background").removeClass("transparent");
-                //$("#work").removeClass("padding");
-                $("#stop").removeClass("buffer");
-            }
-            else {
-                $("#menu-container").addClass("fixed");
-                $("#background").addClass("transparent");
-               // $("#work").addClass("padding");
-                $("#stop").addClass("buffer");
-            }
-        })
-    });
 </script>
 </body>
 </html>

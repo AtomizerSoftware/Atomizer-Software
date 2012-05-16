@@ -16,6 +16,9 @@ $black: #000;
 $blue: #00e;
 $purple: #551a8b;
 $light-blue:#06e;
+$royal-blue: #306EFF;
+$dodger-blue: #1589FF;
+$sky-blue:#1589FF;
 
 /*font info */
 $font-type: Arial;
@@ -410,7 +413,7 @@ section {
   background-color: $grey;
   width: $width;
   height: $menu-height;
-  //position: absolute;
+  position: absolute;
   //top: 560px;
   //display:block;
   //padding-top: 560px;

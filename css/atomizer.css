@@ -334,7 +334,8 @@ section {
 #menu-container {
   background-color: #cccccc;
   width: 960px;
-  height: 150px; }
+  height: 150px;
+  position: absolute; }
 
 .buffer {
   height: 150px; }
