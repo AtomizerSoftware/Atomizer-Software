@@ -28,10 +28,12 @@ $line-height: 1.4;
 
 /*sizing*/
 $width: 960px;
+$slide-width: 864px;
+$slide-height: 560px;
 $column: 48px;	// The column-width of your grid in pixels
 $gutter: 24px;	// The gutter-width of your grid in pixels
 $margin: 0;
-$menu-height: 150px;
+$menu-height: 30px;
 
 /* =============================================================================
    HTML5 display definitions
@@ -366,41 +368,30 @@ td {
 
 #wrapper{
   width:$width;
-  margin:0 auto;
+  margin:auto auto;
   //padding:10px 0 0 0;
+
 }
 
-#empty {
-  //position:relative;
-  height:560px;
+#content {
+  padding-top: 50px;
 }
-section {
-  border-top: 1px dotted #333;
-  //position://static//relative;
-  //top:5px;
-  clear: both;
-}
-.sub-section{
-  clear: both;
-}
-.left-column{
-  width:$width/2;
-  float:left;
-}
-.right-column{
-  width:$width/2;
-  float:left;
-}
-.transparent {
-  opacity: 0.25;
+
+#logo {
+  position: absolute;
+  top: 0px;
+  //left: -50px;
+  width: 100%;
+  margin: 0 auto;
+
 }
 
 .deck-container {
+    position: relative;
     width: auto;
-    max-width: 864px;
-    max-height: 560px;
+    max-width: $slide-width;
+    max-height: 300px; //$slide-height;
     margin: 16px auto 24px auto;
-    //min-height: 560px;
     font-size: 16px;
 }
 
@@ -413,42 +404,24 @@ section {
   background-color: $grey;
   width: $width;
   height: $menu-height;
-  position: relative;
-  bottom: 0;
-  //padding-top: 560px;
-
-  //position: absolute;
-  //top: 560px;
-  //display:block;
-  //padding-top: 560px;
-}
-
-.buffer{
-  height:$menu-height;
-}
-
-.padding{
-  padding-top: $menu-height;
-}
-
-#menu-container.fixed {
-  position: fixed;
-  top:0;
+  position: absolute;
+  bottom: 0px;
 
 }
-nav.main{
-  //background-image: -webkit-linear-gradient(white 30%,#EEE 70%);
-  padding-top:50px;
+
+
+nav {
+  li {
+    float: left;
+    padding: 0 0 15px 15px;
+  }
+}
+#contact {
+    float: right;
+    padding: 0 15px;
 }
 
-nav li {
-  float: left;
-  padding: 0 0 15px 15px;
-}
 
-p.description {
-
-}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

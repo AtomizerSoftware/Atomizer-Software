@@ -296,33 +296,22 @@ td {
    ========================================================================== */
 #wrapper {
   width: 960px;
+  margin: auto auto; }
+
+#content {
+  padding-top: 50px; }
+
+#logo {
+  position: absolute;
+  top: 0px;
+  width: 100%;
   margin: 0 auto; }
 
-#empty {
-  height: 560px; }
-
-section {
-  border-top: 1px dotted #333;
-  clear: both; }
-
-.sub-section {
-  clear: both; }
-
-.left-column {
-  width: 480px;
-  float: left; }
-
-.right-column {
-  width: 480px;
-  float: left; }
-
-.transparent {
-  opacity: 0.25; }
-
 .deck-container {
+  position: relative;
   width: auto;
   max-width: 864px;
-  max-height: 560px;
+  max-height: 300px;
   margin: 16px auto 24px auto;
   font-size: 16px; }
 
@@ -334,26 +323,17 @@ section {
 #menu-container {
   background-color: #cccccc;
   width: 960px;
-  height: 150px;
-  position: relative;
-  bottom: 0; }
-
-.buffer {
-  height: 150px; }
-
-.padding {
-  padding-top: 150px; }
-
-#menu-container.fixed {
-  position: fixed;
-  top: 0; }
-
-nav.main {
-  padding-top: 50px; }
+  height: 30px;
+  position: absolute;
+  bottom: 0px; }
 
 nav li {
   float: left;
   padding: 0 0 15px 15px; }
+
+#contact {
+  float: right;
+  padding: 0 15px; }
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
