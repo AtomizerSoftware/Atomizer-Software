@@ -370,21 +370,6 @@ td {
   //padding:10px 0 0 0;
 }
 
-#background{
-
-  background-image: url("../img/atom.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  content: "";
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  //opacity: .25;
-  //Source: http://stackoverflow.com/questions/7241341/can-i-set-an-opacity-only-to-the-background-image-of-a-div
-}
 #empty {
   //position:relative;
   height:560px;
@@ -409,11 +394,30 @@ section {
 .transparent {
   opacity: 0.25;
 }
+
+.deck-container {
+    width: auto;
+    max-width: 864px;
+    max-height: 560px;
+    margin: 16px auto 24px auto;
+    //min-height: 560px;
+    font-size: 16px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 #menu-container {
   background-color: $grey;
   width: $width;
   height: $menu-height;
-  position: absolute;
+  position: relative;
+  bottom: 0;
+  //padding-top: 560px;
+
+  //position: absolute;
   //top: 560px;
   //display:block;
   //padding-top: 560px;
