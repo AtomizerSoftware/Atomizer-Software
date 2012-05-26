@@ -14,7 +14,29 @@ $dodger-blue: #1589FF;
 $sky-blue:#1589FF;
 
 /*font info */
+@font-face {
+  font-family: 'BebasRegular';
+  src: url('fonts/bebas___-webfont.eot');
+  src: url('fonts/bebas___-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/bebas___-webfont.woff') format('woff'),
+  url('fonts/bebas___-webfont.ttf') format('truetype'),
+  url('fonts/bebas___-webfont.svg#BebasRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
+}
+
+@font-face {
+  font-family: 'FamiliarProBold';
+  src: url('fonts/familiar_pro-bold-webfont.eot');
+  src: url('fonts/familiar_pro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/familiar_pro-bold-webfont.woff') format('woff'),
+  url('fonts/familiar_pro-bold-webfont.ttf') format('truetype'),
+  url('fonts/familiar_pro-bold-webfont.svg#FamiliarProBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
 @font-face {
   font-family: 'AccidentalPresidencyRegular';
   src: url('fonts/accid___-webfont.eot');
@@ -37,7 +59,8 @@ $sky-blue:#1589FF;
 
 }
 
-$font-main: 'AccidentalPresidencyRegular', Arial, sans-serif;
+$font-header: 'BebasRegular', Arial, sans-serif;
+$font-main: 'FamiliarProBold', Arial;
 $font-animatronic: 'ScienceProjectRegular', Arial;
 $font-size: 20px; 		// Your base font-size in pixels
 $em: $font-size / 1em;	// Shorthand for outputting ems
@@ -66,10 +89,11 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
     }
 
     h1 {
+      font-family: $font-header;
       color:#000;
-      font-size: $font-size * 8;
+      font-size: $font-size * 6;
       .sub {
-        font-size: $font-size * 5;
+        font-size: $font-size * 4;
         font-weight: normal;
       }
       .animatronic {
@@ -78,13 +102,14 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
     }
 
     h2 {
+      font-family: $font-header;
       color:$sky-blue;
       border-bottom-color:$dark_grey;
-      font-size: $font-size * 5;
+      font-size: $font-size * 4;
     }
 
     h3 {
-      font-size:$font-size * 3 ;
+      font-size:$font-size * 2 ;
       color:#888;
     }
 
@@ -97,7 +122,7 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
     }
 
     p {
-      font-size:$font-size * 2;
+      font-size:$font-size;//' * 2;
     }
 
     ul.no-bullet{

@@ -1,5 +1,9 @@
 /*  atomizer.scss
  *
+ * @license Copyright (C) 2012, Atomizer Software
+ * http://atomizersoft.net
+ * @author Atomizer Software
+ *
  *  Elements from:
  *    Framless <http://framelessgrid.com/> by Joni Korpi <http://jonikorpi.com/>
  *       licensed under CC0 <http://creativecommons.org/publicdomain/zero/1.0/>
@@ -8,6 +12,14 @@
 /* colors links */
 /*font info */
 /*sizing*/
+/*font info */
+@font-face {
+  font-family: 'BebasRegular';
+  src: url("fonts/bebas___-webfont.eot");
+  src: url("fonts/bebas___-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/bebas___-webfont.woff") format("woff"), url("fonts/bebas___-webfont.ttf") format("truetype"), url("fonts/bebas___-webfont.svg#BebasRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -295,41 +307,55 @@ td {
    Author: Michael Myers
    ========================================================================== */
 #wrapper {
-  width: 960px;
+  width: 760px;
+  height: 100%;
   margin: auto auto; }
 
-#content {
-  padding-top: 50px; }
+header {
+  width: auto;
+  height: 100px;
+  position: relative;
+  z-index: 4; }
 
 #logo {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  margin: 0 auto; }
+  float: right;
+  margin: auto auto; }
 
 .deck-container {
   position: relative;
   width: auto;
   max-width: 864px;
-  max-height: 300px;
-  margin: 16px auto 24px auto;
+  min-height: 300px;
+  margin: auto auto;
   font-size: 16px; }
 
 .slide {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  width: 100%; }
 
 #menu-container {
   background-color: #cccccc;
-  width: 960px;
-  height: 30px;
+  width: 760px;
+  height: auto;
   position: absolute;
-  bottom: 0px; }
+  bottom: 0px;
+  -moz-border-radius-topleft: 14px;
+  -moz-border-radius-topright: 14px;
+  -webkit-border-top-left-radius: 14px;
+  -webkit-border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px; }
 
+nav a {
+  text-decoration: none; }
 nav li {
+  font-family: "BebasRegular";
+  font-size: 32px;
+  text-shadow: 0px -3px 2px #969696;
   float: left;
-  padding: 0 0 15px 15px; }
+  padding: 0 0 0 15px; }
 
 #contact {
   float: right;

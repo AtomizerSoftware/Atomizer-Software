@@ -31,7 +31,7 @@ _/_/_/      _/_/    _/            _/          _/  _/      _/    _/  _/    _/  _/
 
     <title>Atomizer Software</title>
     <meta name="description" content="Breaking Complexity">
-    <meta name="keywords" content="html5, javascript, css3, app design, educational games">
+    <meta name="keywords" content="html5, javascript, css3, app design, web app, educational games">
     <meta name="copyright" content="Copyright 2012 Atomizer Software, Inc.">
 
     <!--Facebook Open Graph meta data -->
@@ -53,7 +53,6 @@ _/_/_/      _/_/    _/            _/          _/  _/      _/    _/  _/    _/  _/
     <link rel="stylesheet" href="js/libs/deckjs/extensions/status/deck.status.css">
     <link rel="stylesheet" href="js/libs/deckjs/extensions/hash/deck.hash.css">
     <link rel="stylesheet" href="js/libs/deckjs/extensions/scale/deck.scale.css">
-
     <!-- Style theme. More available in /themes/style/ or create your own. -->
     <link rel="stylesheet" href="css/style/atomizer-deck/atomizer-deck.css">
 
@@ -69,65 +68,100 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 </head>
 <body>
 <div id="wrapper">
-    <div id="logo">
-        <a href="http://atomizersoft.net"><img src="img/AtomizerSoftwareColorful.png"/></a>
-    </div>
-    <section id="content">
 
-        <div class="deck-container">
-
-            <section class="slide" id="welcome">
-
-            </section>
-
-            <section class="slide" id="work">
-                <h2>Projects</h2>
-                <ul class="no-bullet">
-                    <li>
-                        <h3>PriceIt</h3>
-                    </li>
-                    <li>
-                        <h3>Animatronic</h3>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="slide" id="offerings">
-                <ul class="no-bullet">
-                    <li>
-                        <h3></h3>
-                    </li>
-                </ul>
-
-            </section>
-
-            <section class="slide" id="about">
-
-            </section>
-
-            <!-- deck.navigation snippet -->
-            <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-            <a href="#" class="deck-next-link" title="Next">&#8594;</a>
-
-            <!-- deck.status snippet -->
-            <p class="deck-status">
-                <span class="deck-status-current"></span>
-                /
-                <span class="deck-status-total"></span>
-            </p>
-
-            <!-- deck.goto snippet -->
-            <form action="../Presentations/Animatronic-Architecture" method="get" class="goto-form">
-                <label for="goto-slide">Go to slide:</label>
-                <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-                <datalist id="goto-datalist"></datalist>
-                <input type="submit" value="Go">
-            </form>
-
-            <!-- deck.hash snippet -->
-            <a href="../Presentations/introduction" title="Permalink to this slide" class="deck-permalink">#</a>
-
+    <header>
+        <div id="logo">
+            <a href="http://atomizersoft.net"><img src="img/AtomizerSoftwareColorful.png"/></a>
         </div>
+    </header>
+
+    <section class="deck-container">
+        <section class="slide" id="welcome">
+            <!-- maybe have the log be center, then move to top right after navigate from page -->
+        </section>
+        <section class="slide" id="offerings">
+            <h2>Offerings</h2>
+            <ul class="no-bullet">
+                <li>
+                    <h3>Mobile and Enterprise Software Development</h3>
+                    <p>Atomizer Software has experience in developing enterprise and mobile software solutions.</p>
+                    <h3>Application Development</h3>
+                    <p>Either hardware specific (iPhone/Android) or web based, Atomizer Software can work with you to
+                        deliver the application you want.</p>
+                </li>
+                <li>
+                    <h3>HTML5/CSS3/Javascript</h3>
+
+                    <p>Atomizer Software specializes in the cutting edge web technologies that are redefining the
+                        internet experience.</p>
+                </li>
+            </ul>
+        </section>
+        <section class="slide" id="work">
+            <h2>Work</h2>
+            <ul class="no-bullet">
+                <li>
+                    <h3>PriceIt</h3>
+
+                    <p></p>
+                </li>
+                <li>
+                    <h3>Animatronic</h3>
+
+                    <p>Currently in development, Animatronic aims to provide a solution for early computer science
+                        education through gaming.</p>
+                </li>
+                <li>
+                    <h3>Web Applications</h3>
+                    <p></p>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide" id="about">
+            <h2>About</h2>
+
+            <p>Atomizer Software is based in Washington, D.C.</p>
+
+            <h3>Key Members</h3>
+            <h4>John Kelvie</h4>
+            <p>Founder, CEO</p>
+            <p>John has extensive enterprise design and system architecture experience with excellent marketing
+                instincts.  He has held numerous C-level positions and was founder and chief architect of Overture Technologies.  He holds a Bachelors of Arts from Duke University </p>
+            <h4>Michael Myers</h4>
+
+            <p>Co-founder, Principal</p>
+            <p></p>
+            <h3>Presentations</h3>
+            <ul>
+                <li><p>HTML5 Game Engines</p></li>
+            </ul>
+
+        </section>
+
+
+        <!-- deck.navigation snippet -->
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+        <!-- deck.status snippet -->
+        <p class="deck-status">
+            <span class="deck-status-current"></span>
+            /
+            <span class="deck-status-total"></span>
+        </p>
+
+        <!-- deck.goto snippet -->
+        <form action="../Presentations/Animatronic-Architecture" method="get" class="goto-form">
+            <label for="goto-slide">Go to slide:</label>
+            <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+            <datalist id="goto-datalist"></datalist>
+            <input type="submit" value="Go">
+        </form>
+
+        <!-- deck.hash snippet -->
+        <a href="../Presentations/introduction" title="Permalink to this slide" class="deck-permalink">#</a>
     </section>
     <div style="clear:both;"></div>
 
@@ -141,8 +175,8 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
         <div id="menu-container">
             <nav class="main">
                 <ul>
-                    <li><a href="#work" tabindex="1">Work</a></li>
                     <li><a href="#offerings" tabindex="2">Offerings</a></li>
+                    <li><a href="#work" tabindex="1">Work</a></li>
                     <li><a href="#about" tabindex="2">About</a></li>
 
                 </ul>
@@ -151,7 +185,6 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
                 <a href="mailto:info@atomizersoft.net">info@atomizer.net</a>
             </div>
         </div>
-
     </footer>
 </div>
 
@@ -160,11 +193,6 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-<!-- scripts concatenated and minified via build script -->
-<script src="js/plugins.js"></script>
-<script src="js/script.js"></script>
-<script type="text/javascript" src="js/game.min.js"></script>
 
 <!-- Deck Core and extensions -->
 <script src="js/libs/deckjs/core/deck.core.js"></script>
@@ -175,15 +203,10 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 <script src="js/libs/deckjs/extensions/navigation/deck.navigation.js"></script>
 <script src="js/libs/deckjs/extensions/scale/deck.scale.js"></script>
 
-<!-- Initialize the deck -->
-<script>
-    $(function () {
-        $.deck('.slide');
-    });
-
-    //on resize
-
-</script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/game.min.js"></script>
 
 <!-- end scripts -->
 
