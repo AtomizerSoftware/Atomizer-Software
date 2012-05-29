@@ -21,8 +21,8 @@
   font-style: normal; }
 
 /* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
+HTML5 display definitions
+========================================================================== */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block; }
 
@@ -59,10 +59,10 @@ body {
   line-height: 1.4; }
 
 /*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
- */
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection declarations have to be separate
+* Also: hot pink! (or customize the background color to match your design)
+*/
 ::-moz-selection {
   background: #fe57a1;
   color: #fff;
@@ -86,8 +86,8 @@ a:active {
   color: black; }
 
 /* =============================================================================
-   Typography
-   ========================================================================== */
+Typography
+========================================================================== */
 abbr[title] {
   border-bottom: 1px dotted; }
 
@@ -155,8 +155,8 @@ sub {
   bottom: -0.25em; }
 
 /* =============================================================================
-   Lists
-   ========================================================================== */
+Lists
+========================================================================== */
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px; }
@@ -171,8 +171,8 @@ nav ul, nav ol {
   padding: 0; }
 
 /* =============================================================================
-   Embedded content
-   ========================================================================== */
+Embedded content
+========================================================================== */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -348,29 +348,35 @@ header {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px; }
 
-nav a {
-  text-decoration: none; }
-nav li {
-  font-family: "BebasRegular";
-  font-size: 32px;
-  text-shadow: 0px -3px 2px #969696;
-  float: left;
-  padding: 0 0 0 15px; }
+nav {
+  position: relative;
+  width: 50%;
+  margin: 0px auto; }
+  nav a {
+    text-decoration: none; }
+  nav li {
+    font-family: "BebasRegular";
+    font-size: 32px;
+    text-shadow: 0px -3px 2px #969696;
+    float: left;
+    padding: 5px 0 40px 25px; }
 
 #contact {
-  float: right;
-  padding: 0 15px; }
+  clear: both;
+  position: relative;
+  width: 20%;
+  margin: 0px auto; }
 
 /* ==|== media queries ======================================================
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+EXAMPLE Media Query for Responsive Design.
+This example overrides the primary ('mobile first') styles
+Modify as content requires.
+========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+Please define your styles before this section.
+========================================================================== */
 /* For image replacement */
 .ir {
   display: block;

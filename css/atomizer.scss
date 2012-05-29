@@ -19,16 +19,18 @@ $black: #000;
 /* colors links */
 $blue: #00e;
 $purple: #551a8b;
-$light-blue:#06e;
+$light-blue: #06e;
 $royal-blue: #306EFF;
 $dodger-blue: #1589FF;
-$sky-blue:#1589FF;
+$sky-blue: #1589FF;
 
 /*font info */
 $font-type: Arial;
 $font-menu: 'BebasRegular';
-$font-size: 16px; 		// Your base font-size in pixels
-$em: $font-size / 1em;	// Shorthand for outputting ems
+$font-size: 16px;
+// Your base font-size in pixels
+$em: $font-size / 1em;
+// Shorthand for outputting ems
 $line-height: 1.4;
 
 /*sizing*/
@@ -36,8 +38,10 @@ $width: 760px;
 $header-height: 100px;
 $slide-width: 864px;
 $slide-height: 560px;
-$column: 48px;	// The column-width of your grid in pixels
-$gutter: 24px;	// The gutter-width of your grid in pixels
+$column: 48px;
+// The column-width of your grid in pixels
+$gutter: 24px;
+// The gutter-width of your grid in pixels
 $margin: 0;
 $menu-height: 30px;
 
@@ -45,30 +49,29 @@ $menu-height: 30px;
 @font-face {
   font-family: 'BebasRegular';
   src: url('fonts/bebas___-webfont.eot');
-  src: url('fonts/bebas___-webfont.eot?#iefix') format('embedded-opentype'),
-  url('fonts/bebas___-webfont.woff') format('woff'),
-  url('fonts/bebas___-webfont.ttf') format('truetype'),
-  url('fonts/bebas___-webfont.svg#BebasRegular') format('svg');
+  src: url('fonts/bebas___-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bebas___-webfont.woff') format('woff'), url('fonts/bebas___-webfont.ttf') format('truetype'), url('fonts/bebas___-webfont.svg#BebasRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 
 }
 
-
 /* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
+HTML5 display definitions
+========================================================================== */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
+
 audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
+
 audio:not([controls]) {
   display: none;
 }
+
 [hidden] {
   display: none;
 }
@@ -91,22 +94,25 @@ html, button, input, select, textarea {
   font-family: $font-type;
   color: $dark-grey;
 }
+
 body {
   margin: $margin;
   font-size: $font-size;
   line-height: $line-height;
 }
+
 /*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
- */
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection declarations have to be separate
+* Also: hot pink! (or customize the background color to match your design)
+*/
 
 ::-moz-selection {
   background: #fe57a1;
   color: #fff;
   text-shadow: none;
 }
+
 ::selection {
   background: #fe57a1;
   color: #fff;
@@ -118,27 +124,32 @@ body {
    ========================================================================== */
 
 a {
-  color:$dark-grey;
+  color: $dark-grey;
 }
+
 a:visited {
   //color: $blue;
 }
+
 a:focus {
   outline: none;
 }
+
 a:active {
-  color:$black;
+  color: $black;
 }
+
 /* =============================================================================
-   Typography
-   ========================================================================== */
+Typography
+========================================================================== */
 
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
 b, strong {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 blockquote {
   margin: 1em 40px;
@@ -152,7 +163,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid ;
+  border-top: 1px solid;
   margin: 1em 0;
   padding: 0;
 }
@@ -187,6 +198,7 @@ pre {
 q {
   quotes: none;
 }
+
 q:before, q:after {
   content: "";
   content: none;
@@ -197,38 +209,44 @@ small {
 }
 
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
-sub, sup { font-size: 75%;
-  line-height: 0; position: relative;
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
   vertical-align: baseline;
 }
+
 sup {
   top: -0.5em;
 }
+
 sub {
   bottom: -0.25em;
 }
 
-
 /* =============================================================================
-   Lists
-   ========================================================================== */
+Lists
+========================================================================== */
 
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
+
 dd {
   margin: 0 0 0 40px;
 }
+
 nav ul, nav ol {
   list-style: none;
   list-style-image: none;
   margin: 0;
   padding: 0;
 }
+
 /* =============================================================================
-   Embedded content
-   ========================================================================== */
+Embedded content
+========================================================================== */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -256,7 +274,9 @@ figure {
    ========================================================================== */
 
 form {
-  margin: 0; }
+  margin: 0;
+}
+
 fieldset {
   border: 0;
   margin: 0;
@@ -331,8 +351,17 @@ input[type="checkbox"], input[type="radio"] {
   *width: 13px;
   *height: 13px;
 }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
 
 /* Remove inner padding and border in FF3/4: h5bp.com/l */
 button::-moz-focus-inner, input::-moz-focus-inner {
@@ -351,7 +380,9 @@ textarea {
 }
 
 /* Colors for form validity */
-input:valid, textarea:valid {  }
+input:valid, textarea:valid {
+}
+
 input:invalid, textarea:invalid {
   background-color: #f0dddd;
 }
@@ -364,6 +395,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 td {
   vertical-align: top;
 }
@@ -382,10 +414,10 @@ td {
    Author: Michael Myers
    ========================================================================== */
 
-#wrapper{
-  width:$width;
+#wrapper {
+  width: $width;
   height: 100%;
-  margin:auto auto;
+  margin: auto auto;
   //padding:10px 0 0 0;
 }
 
@@ -394,17 +426,24 @@ header {
   height: $header-height;
   position: relative;
   z-index: 4;
-}
-  #logo {
-    float: right;
-    margin: auto auto;
+
+  a:active {
+
   }
+
+}
+
+#logo {
+  float: right;
+  margin: auto auto;
+}
 
 .deck-container {
   position: relative;
   width: auto;
   max-width: $slide-width;
-  min-height: 300px; //$slide-height;
+  min-height: 300px;
+  //$slide-height;
   //margin: 100px auto 24px auto;
   margin: auto auto;
   font-size: 16px;
@@ -417,14 +456,16 @@ header {
   left: 0;
   width: 100%;
 }
+
 #menu-container {
   background-color: $grey;
   width: $width;
-  height: auto;//$menu-height;
+  height: auto;
+  //$menu-height;
   position: absolute;
   bottom: 0px;
-  -moz-border-radius-topleft:14px;
-  -moz-border-radius-topright:14px;
+  -moz-border-radius-topleft: 14px;
+  -moz-border-radius-topright: 14px;
   -webkit-border-top-left-radius: 14px;
   -webkit-border-top-right-radius: 14px;
   border-top-left-radius: 14px;
@@ -432,9 +473,11 @@ header {
 
 }
 
-
 nav {
 
+  position: relative;
+  width: 50%;
+  margin: 0px auto;
   a {
     text-decoration: none;
   }
@@ -443,66 +486,157 @@ nav {
     font-size: $font-size * 2;
     text-shadow: 0px -3px 2px rgba(150, 150, 150, 1);
     float: left;
-    padding: 0 0 0 15px;
+    padding: 5px 0 40px 25px;
+    //25px;
 
   }
 }
+
 #contact {
-    float: right;
-    padding: 0 15px;
+  clear: both;
+  position: relative;
+  width: 20%;
+  margin: 0px auto;
 }
 
-
-
 /* ==|== media queries ======================================================
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+EXAMPLE Media Query for Responsive Design.
+This example overrides the primary ('mobile first') styles
+Modify as content requires.
+========================================================================== */
 
 @media only screen and (min-width: 35em) {
 /* Style adjustments for viewports that meet the condition */
 }
+
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+Please define your styles before this section.
+========================================================================== */
 
 /* For image replacement */
-.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
-.ir br { display: none; }
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  *line-height: 0;
+}
+
+.ir br {
+  display: none;
+}
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
-.hidden { display: none !important; visibility: hidden; }
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
 
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
 
 /* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
+.invisible {
+  visibility: hidden;
+}
 
 /* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
 
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+/* Black prints faster: h5bp.com/s */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+/* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+/* h5bp.com/t */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
 }
