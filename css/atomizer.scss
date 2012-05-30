@@ -44,8 +44,9 @@ $gutter: 24px;
 // The gutter-width of your grid in pixels
 $margin: 0;
 $menu-height: 30px;
-
+$menu-radius: 20px;
 /*font info */
+
 @font-face {
   font-family: 'BebasRegular';
   src: url('fonts/bebas___-webfont.eot');
@@ -421,6 +422,25 @@ td {
   //padding:10px 0 0 0;
 }
 
+#background {
+  background-image: url("../img/atom.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //opacity: .15;
+
+}
+
+.translucent {
+  opacity: .15;
+}
+
 header {
   width: auto;
   height: $header-height;
@@ -464,12 +484,12 @@ header {
   //$menu-height;
   position: absolute;
   bottom: 0px;
-  -moz-border-radius-topleft: 14px;
-  -moz-border-radius-topright: 14px;
-  -webkit-border-top-left-radius: 14px;
-  -webkit-border-top-right-radius: 14px;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+  -moz-border-radius-topleft: $menu-radius;
+  -moz-border-radius-topright: $menu-radius;
+  -webkit-border-top-left-radius: $menu-radius;
+  -webkit-border-top-right-radius: $menu-radius;
+  border-top-left-radius: $menu-radius;
+  border-top-right-radius: $menu-radius;
 
 }
 

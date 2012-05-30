@@ -32,9 +32,6 @@
 .deck-container {
   font-family: "FamiliarProBold", Arial;
   font-size: 20px;
-  background-image: url("img/atom-translucent.png");
-  background-repeat: no-repeat;
-  background-position: center center;
   content: "";
   position: fixed;
   z-index: -1;

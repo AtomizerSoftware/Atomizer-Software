@@ -69,9 +69,9 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
 .deck-container {
   font-family: $font-main;
   font-size:$font-size;
-  background-image: url("img/atom-translucent.png");
-  background-repeat: no-repeat;
-  background-position: center center;
+  //background-image: url("img/atom-translucent.png");
+  //background-repeat: no-repeat;
+  //background-position: center center;
   content: "";
   position: fixed;
   z-index: -1;

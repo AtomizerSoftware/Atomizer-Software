@@ -311,6 +311,21 @@ td {
   height: 100%;
   margin: auto auto; }
 
+#background {
+  background-image: url("../img/atom.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.translucent {
+  opacity: .15; }
+
 header {
   width: auto;
   height: 100px;
@@ -341,12 +356,12 @@ header {
   height: auto;
   position: absolute;
   bottom: 0px;
-  -moz-border-radius-topleft: 14px;
-  -moz-border-radius-topright: 14px;
-  -webkit-border-top-left-radius: 14px;
-  -webkit-border-top-right-radius: 14px;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px; }
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px; }
 
 nav {
   position: relative;
