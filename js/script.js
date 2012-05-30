@@ -9,7 +9,7 @@
 
 function locationHashChanged() {
 
-    if (location.hash === "#welcome" || null) {
+    if (location.hash === "#welcome" || location.hash === "") {
         console.log(location.hash);
         $('#background').removeClass("translucent");
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
     $.deck('.slide');
 
     //check hash initial conditions
-    if (location.hash === "#welcome" || null) {
+    if (location.hash === "#welcome" || location.hash === "") {
         console.log(location.hash);
         $('#background').removeClass("translucent");
 
