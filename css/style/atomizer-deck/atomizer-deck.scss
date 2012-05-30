@@ -106,6 +106,8 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
       color:$sky-blue;
       border-bottom-color:$dark_grey;
       font-size: $font-size * 4;
+      margin-bottom: 8px;
+      padding-left: 30px;
     }
 
     h3 {

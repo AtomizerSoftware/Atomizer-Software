@@ -339,8 +339,10 @@ header {
 .deck-container {
   position: relative;
   width: auto;
-  max-width: 864px;
+  min-width: 600px;
+  max-width: 760px;
   min-height: 300px;
+  max-height: 400px;
   margin: auto auto;
   font-size: 16px; }
 
@@ -350,10 +352,15 @@ header {
   left: 0;
   width: 100%; }
 
+footer {
+  width: 760px;
+  height: 100%;
+  margin: auto auto; }
+
 #menu-container {
   background-color: #cccccc;
   width: 760px;
-  height: auto;
+  height: 90px;
   position: absolute;
   bottom: 0px;
   -moz-border-radius-topleft: 20px;
@@ -362,6 +369,52 @@ header {
   -webkit-border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px; }
+
+canvas {
+  position: absolute;
+  top: 5px;
+  left: 5px; }
+
+#slideshow {
+  position: relative;
+  height: 300px;
+  width: 50%; }
+  #slideshow img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 8; }
+  #slideshow img.active {
+    z-index: 10; }
+  #slideshow img.last-active {
+    z-index: 9; }
+
+.description {
+  font-size: 6px; }
+
+.scrollable {
+  overflow: scroll; }
+
+.left {
+  position: relative;
+  float: left; }
+
+.right {
+  position: relative;
+  float: right; }
+
+.one-colum {
+  clear: both;
+  width: 100%; }
+
+.two-column {
+  width: 50%; }
+
+.top {
+  height: 50%; }
+
+.bottom {
+  height: 50%; }
 
 nav {
   position: relative;
@@ -374,7 +427,7 @@ nav {
     font-size: 32px;
     text-shadow: 0px -3px 2px #969696;
     float: left;
-    padding: 5px 0 40px 25px; }
+    padding: 5px 0 20px 25px; }
 
 #contact {
   clear: both;

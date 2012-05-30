@@ -36,14 +36,16 @@ $line-height: 1.4;
 /*sizing*/
 $width: 760px;
 $header-height: 100px;
-$slide-width: 864px;
-$slide-height: 560px;
+$slide-min-width: 600px;
+$slide-max-width: 760px;
+$slide-min-height: 300px;
+$slide-max-height: 400px;
 $column: 48px;
 // The column-width of your grid in pixels
 $gutter: 24px;
 // The gutter-width of your grid in pixels
 $margin: 0;
-$menu-height: 30px;
+$menu-height: 90px;
 $menu-radius: 20px;
 /*font info */
 
@@ -453,6 +455,7 @@ header {
 
 }
 
+
 #logo {
   float: right;
   margin: auto auto;
@@ -461,8 +464,10 @@ header {
 .deck-container {
   position: relative;
   width: auto;
-  max-width: $slide-width;
+  min-width: $slide-min-width;
+  max-width: $slide-max-width;
   min-height: 300px;
+  max-height: $slide-max-height;
   //$slide-height;
   //margin: 100px auto 24px auto;
   margin: auto auto;
@@ -477,10 +482,16 @@ header {
   width: 100%;
 }
 
+footer {
+  width: $width;
+  height: 100%;
+  margin: auto auto;
+}
+
 #menu-container {
   background-color: $grey;
   width: $width;
-  height: auto;
+  height: $menu-height; //auto;
   //$menu-height;
   position: absolute;
   bottom: 0px;
@@ -493,6 +504,78 @@ header {
 
 }
 
+canvas {
+  //width: 50%;
+  //margin: 0 auto;
+  //margin: 15px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+#slideshow {
+  position:relative;
+  height: 300px;//100%;
+  width: 50%;
+
+  img {
+    position: absolute;
+    //width: 50%;
+    top:0;
+    left:50%;
+    z-index:8;
+  }
+
+  img.active {
+    z-index:10;
+  }
+  img.last-active {
+    z-index:9;
+  }
+}
+
+.description {
+  font-size: 6px;
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+.left {
+  position: relative;
+  float: left;
+  //background-color: blue;
+  //width: 50%;
+ // height: 100%;
+}
+
+.right {
+  position: relative;
+  float: right;
+  //background-color: #00ffff;
+  //width: 50%;
+  //height: 100%;
+}
+
+.one-colum {
+  clear: both;
+  width: 100%;
+}
+
+.two-column {
+  //height: 100%;
+  width: 50%;
+}
+
+.top {
+  height: 50%;
+
+}
+
+.bottom {
+  height:50%;
+}
 nav {
 
   position: relative;
@@ -506,7 +589,7 @@ nav {
     font-size: $font-size * 2;
     text-shadow: 0px -3px 2px rgba(150, 150, 150, 1);
     float: left;
-    padding: 5px 0 40px 25px;
+    padding: 5px 0 20px 25px;
     //25px;
 
   }

@@ -52,7 +52,9 @@
     font-family: "BebasRegular", Arial, sans-serif;
     color: #1589ff;
     border-bottom-color: #323232;
-    font-size: 80px; }
+    font-size: 80px;
+    margin-bottom: 8px;
+    padding-left: 30px; }
   .deck-container .slide h3 {
     font-size: 40px;
     color: #888; }
