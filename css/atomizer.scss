@@ -47,6 +47,10 @@ $gutter: 24px;
 $margin: 0;
 $menu-height: 90px;
 $menu-radius: 20px;
+
+/*constanst*/
+$LOGO_WIDTH: 200px;
+
 /*font info */
 
 @font-face {
@@ -444,8 +448,8 @@ td {
 }
 
 header {
-  width: auto;
-  height: $header-height;
+  width: 100%;
+  height: 100%;//$header-height;
   position: relative;
   z-index: 4;
 
@@ -457,9 +461,20 @@ header {
 
 
 #logo {
-  float: right;
-  margin: auto auto;
+  position: absolute;
+  right:0;
+  top:0;
+
 }
+
+.middle {
+  right: $width/2 - $LOGO_WIDTH/2;
+  //margin: 0 auto;
+}
+
+
+
+
 
 .deck-container {
   position: relative;

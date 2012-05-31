@@ -7,19 +7,42 @@
  *
  */
 
-function locationHashChanged() {
+var home;
+var logoCurPos;
 
-    if (location.hash === "#welcome" || location.hash === "") {
-        console.log(location.hash);
-        $('#background').removeClass("translucent");
 
-    } else {
-        $('#background').addClass("translucent");
-        console.log(location.hash);
+function logoPositionCheck() {
+
+    var logoCurPos =  $('#logo').css('right');
+    console.log('logoCurPos: ' + logoCurPos);
+
+    if (home === true && logoCurPos !== '0px') {
+        console.log('Image is not in correct');
+
+        $('#logo').css('right', '0px');
+
     }
+    else if (home !== true && logoCurPos !== '-350px' ) {
+        console.log('Image is not in correct');
+        $('#logo').css('right', '-350px');
+    }
+
 }
 
-window.onhashchange = locationHashChanged;
+function locationHashChanged() {
+
+    if (location.hash === '#welcome' || location.hash === '') {
+        $('#background').removeClass('translucent');
+        home = true;
+        console.log('Hash: ' + location.hash + ' Home: ' + home);
+    } else {
+        $('#background').addClass('translucent');
+        home = false;
+        console.log('Hash: ' + location.hash + ' Home: ' + home);
+    }
+
+    logoPositionCheck();
+}
 
 function slideSwitch() {
     var $active = $('#slideshow IMG.active');
@@ -38,22 +61,42 @@ function slideSwitch() {
         });
 }
 
+window.onhashchange = locationHashChanged;
+
+$("#offerings-link").click(function () {
+    if (home === true){
+    $("#logo").animate({"right": "-=350px"}, "slow");
+    }
+})
+$("#work-link").click(function () {
+    if (home == true){
+    $("#logo").animate({"right": "-=350px"}, "slow");
+    }
+})
+$("#about-link").click(function () {
+    if (home == true){
+    $("#logo").animate({"right": "-=350px"}, "slow");
+    }
+})
+
+$(document).keypress(function () {
+    console.log(event.which);
+})
+
 $(document).ready(function () {
     $.deck('.slide');
 
     //check hash initial conditions
-    if (location.hash === "#welcome" || location.hash === "") {
+
+    locationHashChanged();
+   /* if (location.hash === "#welcome" || location.hash === "") {
         console.log(location.hash);
         $('#background').removeClass("translucent");
 
     } else {
         $('#background').addClass("translucent");
         console.log(location.hash);
-    }
-
-    if ("onhashchange" in window) {
-       console.log("The browser supports the hashchange event!");
-    }
+    }     */
 
     console.log(location.hash);
 
@@ -62,6 +105,8 @@ $(document).ready(function () {
     });
 
 });
+
+
 
 
 

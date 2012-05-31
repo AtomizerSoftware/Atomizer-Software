@@ -12,6 +12,7 @@
 /* colors links */
 /*font info */
 /*sizing*/
+/*constanst*/
 /*font info */
 @font-face {
   font-family: 'BebasRegular';
@@ -327,14 +328,18 @@ td {
   opacity: .15; }
 
 header {
-  width: auto;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: relative;
   z-index: 4; }
 
 #logo {
-  float: right;
-  margin: auto auto; }
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.middle {
+  right: 280px; }
 
 .deck-container {
   position: relative;
