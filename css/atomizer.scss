@@ -497,28 +497,6 @@ header {
   width: 100%;
 }
 
-footer {
-  width: $width;
-  height: 100%;
-  margin: auto auto;
-}
-
-#menu-container {
-  background-color: $grey;
-  width: $width;
-  height: $menu-height; //auto;
-  //$menu-height;
-  position: absolute;
-  bottom: 0px;
-  -moz-border-radius-topleft: $menu-radius;
-  -moz-border-radius-topright: $menu-radius;
-  -webkit-border-top-left-radius: $menu-radius;
-  -webkit-border-top-right-radius: $menu-radius;
-  border-top-left-radius: $menu-radius;
-  border-top-right-radius: $menu-radius;
-
-}
-
 canvas {
   //width: 50%;
   //margin: 0 auto;
@@ -591,6 +569,29 @@ canvas {
 .bottom {
   height:50%;
 }
+
+footer {
+  width: $width;
+  height: 100%;
+  margin: auto auto;
+}
+
+#menu-container {
+  background-color: $grey;
+  width: $width;
+  height: $menu-height; //auto;
+  //$menu-height;
+  position: absolute;
+  bottom: 0px;
+  -moz-border-radius-topleft: $menu-radius;
+  -moz-border-radius-topright: $menu-radius;
+  -webkit-border-top-left-radius: $menu-radius;
+  -webkit-border-top-right-radius: $menu-radius;
+  border-top-left-radius: $menu-radius;
+  border-top-right-radius: $menu-radius;
+
+}
+
 nav {
 
   position: relative;
@@ -607,6 +608,19 @@ nav {
     padding: 5px 0 20px 25px;
     //25px;
 
+  }
+}
+
+#contact {
+  position: relative;
+  width:100%;
+
+  a {
+    text-decoration: none;
+  }
+  li {
+    float: left;
+    list-style: none;
   }
 }
 

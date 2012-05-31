@@ -13,95 +13,130 @@ var logoCurPos;
 
 function logoPositionCheck() {
 
-    var logoCurPos =  $('#logo').css('right');
-    console.log('logoCurPos: ' + logoCurPos);
+    logoCurPos = $('#logo').css('right');
+    //console.log('logoCurPos: ' + logoCurPos);
 
     if (home === true && logoCurPos !== '0px') {
-        console.log('Image is not in correct');
-
+        //console.log('Image is not in correct');
+        $('#background').removeClass('translucent');
         $('#logo').css('right', '0px');
 
     }
-    else if (home !== true && logoCurPos !== '-350px' ) {
-        console.log('Image is not in correct');
+    else if (home !== true && logoCurPos !== '-350px') {
+        //console.log('Image is not in correct');
         $('#logo').css('right', '-350px');
+        $('#background').addClass('translucent');
     }
 
 }
 
-function locationHashChanged() {
+function opacityChange() {
+
+    console.log('opacityChange() called');
 
     if (location.hash === '#welcome' || location.hash === '') {
         $('#background').removeClass('translucent');
         home = true;
-        console.log('Hash: ' + location.hash + ' Home: ' + home);
+        //console.log('Hash: ' + location.hash + ' Home: ' + home);
     } else {
         $('#background').addClass('translucent');
         home = false;
-        console.log('Hash: ' + location.hash + ' Home: ' + home);
+        //console.log('Hash: ' + location.hash + ' Home: ' + home);
     }
-
-    logoPositionCheck();
 }
 
 function slideSwitch() {
     var $active = $('#slideshow IMG.active');
 
-    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    if ($active.length == 0) $active = $('#slideshow IMG:last');
 
-    var $next =  $active.next().length ? $active.next()
+    var $next = $active.next().length ? $active.next()
         : $('#slideshow IMG:first');
 
     $active.addClass('last-active');
 
-    $next.css({opacity: 0.0})
+    $next.css({opacity:0.0})
         .addClass('active')
-        .animate({opacity: 1.0}, 1000, function() {
+        .animate({opacity:1.0}, 1000, function () {
             $active.removeClass('active last-active');
         });
 }
 
-window.onhashchange = locationHashChanged;
+window.onhashchange = opacityChange;
+
+
+$("#logo").click(function () {
+    if (home === false) {
+        console.log("#logo clicked");
+        animateLogo();
+        //$("#logo").animate({"right": "+=350px"}, "slow");
+    }
+})
 
 $("#offerings-link").click(function () {
-    if (home === true){
-    $("#logo").animate({"right": "-=350px"}, "slow");
+    if (home === true) {
+        console.log(home);
+        animateLogo();
+        //$("#logo").animate({"right": "-=350px"}, "slow");
     }
 })
 $("#work-link").click(function () {
-    if (home == true){
-    $("#logo").animate({"right": "-=350px"}, "slow");
+    if (home === true) {
+        console.log(home);
+        animateLogo();
+        //$("#logo").animate({"right": "-=350px"}, "slow");
     }
 })
 $("#about-link").click(function () {
-    if (home == true){
-    $("#logo").animate({"right": "-=350px"}, "slow");
+    if (home === true) {
+        console.log(home);
+        animateLogo();
+        //$("#logo").animate({"right": "-=350px"}, "slow");
     }
 })
 
-$(document).keypress(function () {
-    console.log(event.which);
+function animateLogo() {
+
+    logoCurPos = $('#logo').css('right');
+
+    console.log('hash: ' + location.hash + ' home: ' + home + ' logoCurPos: ' + logoCurPos);
+
+    if (home === true && logoCurPos === '0px') {
+        $("#logo").animate({"right":"-=350px"}, "slow");
+    }
+    if (home === false && logoCurPos === '-350px') {
+        $("#logo").animate({"right":"+=350px"}, "slow");
+    }
+}
+
+$(document).keyup(function () {
+    var key = event.which;
+
+    if (key === 37 || key === 38) {
+        //console.log('move back');
+
+        animateLogo();
+        opacityChange();
+
+
+    } else if (key === 39 || key === 40) {
+        //console.log('move forward')
+
+        animateLogo();
+        opacityChange();
+    }
+
 })
 
 $(document).ready(function () {
     $.deck('.slide');
 
-    //check hash initial conditions
+    opacityChange();
+    logoPositionCheck();
 
-    locationHashChanged();
-   /* if (location.hash === "#welcome" || location.hash === "") {
-        console.log(location.hash);
-        $('#background').removeClass("translucent");
 
-    } else {
-        $('#background').addClass("translucent");
-        console.log(location.hash);
-    }     */
-
-    console.log(location.hash);
-
-    $(function() {
-        setInterval( "slideSwitch()", 3000 );
+    $(function () {
+        setInterval("slideSwitch()", 3000);
     });
 
 });
