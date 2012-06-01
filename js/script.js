@@ -9,41 +9,9 @@
 
 var home;
 var logoCurPos;
+var curHash;
+var prevHash;
 
-
-function logoPositionCheck() {
-
-    logoCurPos = $('#logo').css('right');
-    //console.log('logoCurPos: ' + logoCurPos);
-
-    if (home === true && logoCurPos !== '0px') {
-        //console.log('Image is not in correct');
-        $('#background').removeClass('translucent');
-        $('#logo').css('right', '0px');
-
-    }
-    else if (home !== true && logoCurPos !== '-350px') {
-        //console.log('Image is not in correct');
-        $('#logo').css('right', '-350px');
-        $('#background').addClass('translucent');
-    }
-
-}
-
-function opacityChange() {
-
-    console.log('opacityChange() called');
-
-    if (location.hash === '#welcome' || location.hash === '') {
-        $('#background').removeClass('translucent');
-        home = true;
-        //console.log('Hash: ' + location.hash + ' Home: ' + home);
-    } else {
-        $('#background').addClass('translucent');
-        home = false;
-        //console.log('Hash: ' + location.hash + ' Home: ' + home);
-    }
-}
 
 function slideSwitch() {
     var $active = $('#slideshow IMG.active');
@@ -62,75 +30,106 @@ function slideSwitch() {
         });
 }
 
-window.onhashchange = opacityChange;
+function logoPositionCheck() {
 
+    logoCurPos = $('#logo').css('right');
 
-$("#logo").click(function () {
-    if (home === false) {
-        console.log("#logo clicked");
-        animateLogo();
-        //$("#logo").animate({"right": "+=350px"}, "slow");
+    if (home === true && logoCurPos !== '0px') {
+        $('#logo').css('right', '0px');
     }
-})
+    else if (home !== true && logoCurPos !== '-305px') {
+        $('#logo').css('right', '-305px');
+    }
 
-$("#offerings-link").click(function () {
-    if (home === true) {
-        console.log(home);
-        animateLogo();
-        //$("#logo").animate({"right": "-=350px"}, "slow");
+}
+
+function changeHash() {
+    prevHash = curHash;
+    curHash = location.hash;
+
+    if (curHash === '#welcome' || curHash === '') {
+        home = true;
+    } else {
+        home = false;
     }
-})
-$("#work-link").click(function () {
-    if (home === true) {
-        console.log(home);
-        animateLogo();
-        //$("#logo").animate({"right": "-=350px"}, "slow");
+
+    console.log('prevHash: ' + prevHash + ' curHash ' + curHash + ' home: ' + home);
+}
+
+function opacityChange() {
+
+    var curTrans = $('#background').css('opacity');
+    console.log('opacity: ' + curTrans + '    hash: ' + curHash + ' home: '+ home);
+
+    if (home) {
+        $('#background').animate({'opacity':'+=1'}, "slow");
+    } else {
+        if (curTrans === '1') {
+            $('#background').animate({'opacity':'-=0.85'}, "slow");
+        }
     }
-})
-$("#about-link").click(function () {
-    if (home === true) {
-        console.log(home);
-        animateLogo();
-        //$("#logo").animate({"right": "-=350px"}, "slow");
-    }
-})
+
+    //var curTrans = $('#background').css('opacity')
+    //console.log('opacity: ' + curTrans + ' hash: ' + curHash + ' home: '+ home);
+}
 
 function animateLogo() {
 
     logoCurPos = $('#logo').css('right');
+    console.log('logoCurPos: ' + logoCurPos + ' hash: ' + curHash + ' home: ' + home);
 
-    console.log('hash: ' + location.hash + ' home: ' + home + ' logoCurPos: ' + logoCurPos);
+    if (home === true && logoCurPos !== '0px') {
+        $("#logo").animate({"right":"+=305px"}, "slow");
+    }
+    else if (home === false && logoCurPos !== '-305px') {
 
-    if (home === true && logoCurPos === '0px') {
-        $("#logo").animate({"right":"-=350px"}, "slow");
+        $("#logo").animate({"right":"-=305px"}, "slow");
     }
-    if (home === false && logoCurPos === '-350px') {
-        $("#logo").animate({"right":"+=350px"}, "slow");
-    }
+
+    //logoCurPos = $('#logo').css('right');
+    //console.log('logoCurPos: ' + logoCurPos + ' hash: ' + curHash + ' home: ' + home);
 }
+
+$('a').click(function () {
+    var id = this.id;
+    if (id === 'welcome-link') {
+        //change opacity and move logo center
+        changeHash();
+        animateLogo();
+        opacityChange();
+        changeHash();
+    }
+    else if (id === 'work-link' || id === 'offerings-link' || id == 'about-link') {
+        changeHash();
+        animateLogo();
+        opacityChange();
+        changeHash();
+    }
+})
 
 $(document).keyup(function () {
     var key = event.which;
 
     if (key === 37 || key === 38) {
-        //console.log('move back');
-
+        changeHash();
         animateLogo();
         opacityChange();
-
+        changeHash();
 
     } else if (key === 39 || key === 40) {
-        //console.log('move forward')
-
+        changeHash();
         animateLogo();
         opacityChange();
+        changeHash();
     }
-
 })
+
+//window.onhashchange = changeHash;
 
 $(document).ready(function () {
     $.deck('.slide');
 
+    changeHash();
     opacityChange();
     logoPositionCheck();
 
