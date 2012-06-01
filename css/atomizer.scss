@@ -23,6 +23,8 @@ $light-blue: #06e;
 $royal-blue: #306EFF;
 $dodger-blue: #1589FF;
 $sky-blue: #1589FF;
+$dodger-blue: #153E7E;
+$cornflower-blue: #151B8D;
 
 /*font info */
 $font-type: Arial;
@@ -45,7 +47,7 @@ $column: 48px;
 $gutter: 24px;
 // The gutter-width of your grid in pixels
 $margin: 0;
-$menu-height: 90px;
+$menu-height: 100px;
 $menu-radius: 20px;
 
 /*constanst*/
@@ -449,7 +451,8 @@ td {
 
 header {
   width: 100%;
-  height: 100%;//$header-height;
+  height: 100%;
+  //$header-height;
   position: relative;
   z-index: 4;
 
@@ -459,11 +462,10 @@ header {
 
 }
 
-
 #logo {
   position: absolute;
-  right:0;
-  top:0;
+  right: 0;
+  top: 0;
 
 }
 
@@ -471,10 +473,6 @@ header {
   right: $width/2 - $LOGO_WIDTH/2;
   //margin: 0 auto;
 }
-
-
-
-
 
 .deck-container {
   position: relative;
@@ -502,28 +500,37 @@ canvas {
   //margin: 0 auto;
   //margin: 15px;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 15px;
+  left: 15px;
+}
+
+.social {
+  float: left;
+  a {
+    float: left;
+    padding-left: 2px;
+  }
 }
 
 #slideshow {
-  position:relative;
-  height: 300px;//100%;
+  position: relative;
+  height: 300px;
+  //100%;
   width: 50%;
 
   img {
     position: absolute;
     //width: 50%;
-    top:0;
-    left:50%;
-    z-index:8;
+    top: 0;
+    left: 50%;
+    z-index: 8;
   }
 
   img.active {
-    z-index:10;
+    z-index: 10;
   }
   img.last-active {
-    z-index:9;
+    z-index: 9;
   }
 }
 
@@ -540,7 +547,7 @@ canvas {
   float: left;
   //background-color: blue;
   //width: 50%;
- // height: 100%;
+  // height: 100%;
 }
 
 .right {
@@ -567,7 +574,7 @@ canvas {
 }
 
 .bottom {
-  height:50%;
+  height: 50%;
 }
 
 footer {
@@ -579,7 +586,8 @@ footer {
 #menu-container {
   background-color: $grey;
   width: $width;
-  height: $menu-height; //auto;
+  height: $menu-height;
+  //auto;
   //$menu-height;
   position: absolute;
   bottom: 0px;
@@ -593,10 +601,11 @@ footer {
 }
 
 nav {
-
   position: relative;
   width: 50%;
   margin: 0px auto;
+
+
   a {
     text-decoration: none;
   }
@@ -605,31 +614,38 @@ nav {
     font-size: $font-size * 2;
     text-shadow: 0px -3px 2px rgba(150, 150, 150, 1);
     float: left;
-    padding: 5px 0 20px 25px;
-    //25px;
-
+    padding: 5px 0px 5px 25px;
   }
 }
-
 #contact {
   position: relative;
-  width:100%;
-
+  width: 50%;
+  margin: 0 auto;
+  line-height: 1;
   a {
     text-decoration: none;
+    margin-left: 15px;
+  }
+  img {
+    margin-top: 7px;
+  }
+  ul{
+    //padding-left: 50px;
+    //margin-left: 20px;
+    position: relative;
+    //width: 50%;
+    margin: 0 auto;
   }
   li {
     float: left;
     list-style: none;
   }
+  p {
+    font-size: .9em;
+    margin-bottom: 5px;
+  }
 }
 
-#contact {
-  clear: both;
-  position: relative;
-  width: 20%;
-  margin: 0px auto;
-}
 
 /* ==|== media queries ======================================================
 EXAMPLE Media Query for Responsive Design.

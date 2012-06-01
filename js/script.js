@@ -90,41 +90,35 @@ function animateLogo() {
     //console.log('logoCurPos: ' + logoCurPos + ' hash: ' + curHash + ' home: ' + home);
 }
 
-$('a').click(function () {
-    var id = this.id;
-    if (id === 'welcome-link') {
-        //change opacity and move logo center
-        changeHash();
-        animateLogo();
-        opacityChange();
-        changeHash();
-    }
-    else if (id === 'work-link' || id === 'offerings-link' || id == 'about-link') {
-        changeHash();
-        animateLogo();
-        opacityChange();
-        changeHash();
-    }
-})
+function onClickEvent() {
+    console.log("=====CLICK EVENT=====");
+    changeHash();
+    animateLogo();
+    opacityChange();
+
+}
+
+window.onhashchange = onClickEvent;
+
+function onKeyEvent() {
+    console.log("=====KEY EVENT=====")
+    changeHash();
+    animateLogo();
+    opacityChange();
+}
 
 $(document).keyup(function () {
     var key = event.which;
 
     if (key === 37 || key === 38) {
-        changeHash();
-        animateLogo();
-        opacityChange();
-        changeHash();
+        onKeyEvent();
 
     } else if (key === 39 || key === 40) {
-        changeHash();
-        animateLogo();
-        opacityChange();
-        changeHash();
+        onKeyEvent();
     }
 })
 
-//window.onhashchange = changeHash;
+
 
 $(document).ready(function () {
     $.deck('.slide');

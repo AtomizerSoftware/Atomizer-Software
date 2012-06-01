@@ -12,6 +12,8 @@ $light-blue:#06e;
 $royal-blue: #306EFF;
 $dodger-blue: #1589FF;
 $sky-blue:#1589FF;
+$dodger-blue: #153E7E;
+$cornflower-blue: #151B8D;
 
 /*font info */
 @font-face {
@@ -112,7 +114,8 @@ $em: $font-size / 1em;	// Shorthand for outputting ems
 
     h3 {
       font-size:$font-size * 2 ;
-      color:#888;
+      //text-shadow: 0px -3px 2px rgba(150, 150, 150, 1);
+      color:$dodger-blue;
     }
 
     pre {
